@@ -14,14 +14,14 @@ class Score(models.Model):
         #if test result less than 80 execut this
         if self.test_result < 80:
             #twilio code
-            account_sid ='AC4794da9855891cc86ad99b95bed55417'
-            auth_token ='6eb0fe0369579a3584edfdaed12045ab'
+            account_sid =
+            auth_token =
             client = Client(account_sid, auth_token)
 
             message = client.messages.create(
                 body = f'Hi, your test reuslt is  {self.test_result}. Great Job',
-                from_ ='+15484890144',
-                to='+15196707469'
+                from_ =,
+                to=''
             )
 
             print(message.sid)
